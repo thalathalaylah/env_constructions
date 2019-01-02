@@ -17,7 +17,9 @@ do
 done
 
 if [ -e fails ]; then
+  output_red
   cat fails
+  output_white
   rm fails
   exit 1
 fi
