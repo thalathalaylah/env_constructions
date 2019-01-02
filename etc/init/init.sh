@@ -29,6 +29,11 @@ os_detect() {
     esac
 }
 
+if [ ${EUID:-${UID}} != 0 ]; then
+  echo 'This Init script requires root privilege. Please use sudo command.'
+  exit 1
+fi
+
 INITPATH=$(dirname $0)
 OS=`os_detect`
 
