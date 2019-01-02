@@ -9,6 +9,9 @@ list: ## Show dot files in this repository
 init: ## Setup environment settings
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init/init.sh
 
+test: ## Test environment settings
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/test/test.sh
+
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| sort \
