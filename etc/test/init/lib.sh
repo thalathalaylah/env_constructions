@@ -13,18 +13,18 @@ GREEN=$(tput setaf 2; tput bold)
 YELLOW=$(tput setaf 3)
 RED=$(tput setaf 1)
 
-function output_red() {
+output_red() {
   echo ${RED}
 }
 
-function output_green() {
+output_green() {
   echo ${GREEN}
 }
 
-function output_yellow() {
+output_yellow() {
   echo ${YELLOW}
 }
 
-function output_white() {
+output_white() {
   echo ${NORMAL}
 }
