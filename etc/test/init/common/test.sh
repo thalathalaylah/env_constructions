@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SCRIPTPATH=$(dirname $0)
-. ${SCRIPTPATH}/../lib.sh
+. ${SCRIPTPATH}/../../../library/lib.sh
 
 if [ -e fails ]; then
   echo 'Exists "fails" file. this script create same name file when test failed.'
