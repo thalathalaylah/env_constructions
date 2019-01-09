@@ -9,6 +9,9 @@ list: ## Show dot files in this repository
 init: ## Setup environment settings
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init/init.sh
 
+update: ## Fetch changes for this repository
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/update.sh
+
 test: ## Test environment settings
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/test/test.sh
 
