@@ -1,5 +1,8 @@
 #!/bin/sh
 
+SCRIPTPATH=$(dirname $0)
+. ${SCRIPTPATH}/../library/lib.sh
+
 lower() {
     if [ $# -eq 0 ]; then
         cat <&0
@@ -30,7 +33,9 @@ os_detect() {
 }
 
 if [ ${EUID:-${UID}} != 0 ]; then
+  output_red
   echo 'This Init script requires root privilege. Please use sudo command.'
+  output_white
   exit 1
 fi
 
