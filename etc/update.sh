@@ -14,8 +14,9 @@ cd ~/.env_constructions
 if [ ! -d ".git" ]; then
   git init
   git remote add origin https://github.com/thalathalaylah/env_constructions.git
+  git fetch origin
+  git checkout --force origin/master
+else
+  git fetch origin
+  git checkout origin/master
 fi
-
-git fetch origin
-git checkout origin/master
-
