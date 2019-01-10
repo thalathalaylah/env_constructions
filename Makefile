@@ -12,6 +12,9 @@ init: ## Setup environment settings
 update: ## Fetch changes for this repository
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/update.sh
 
+deploy: ## Create symlink for dotfile and install plugin
+	@$(foreach val, $(DOTFILES), ln -s $(abspath $(val) $(HOME)/$(subst dotfiles/, , $(val))))
+
 test: ## Test environment settings
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/test/test.sh
 

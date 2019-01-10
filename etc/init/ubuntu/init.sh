@@ -41,7 +41,5 @@ sudo apt-get install -y software-properties-common # to use add-apt-repository
 install_with_repository
 install
 
-sh ${SCRIPTPATH}/fisher.sh
-
 mkdir ~/bin
 sh ${SCRIPTPATH}/ghq.sh
