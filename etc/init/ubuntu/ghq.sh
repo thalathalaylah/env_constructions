@@ -5,4 +5,3 @@ unzip ghq_linux_amd64.zip -d ghq
 mv ghq/ghq ~/bin
 rm -rf ghq
 rm ghq_linux_amd64.zip
-
