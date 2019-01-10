@@ -8,7 +8,7 @@ install_with_repository() {
     read repository
     if [ -z "$repository" ] ; then break ; fi
 
-    sudo apt-add-repository ${repository}
+    sudo apt-add-repository -y ${repository}
   done
 
   sudo apt-get update
@@ -37,6 +37,7 @@ echo 'Ubuntu mode'
 
 SCRIPTPATH=$(dirname $0)
 
+sudo apt-get update
 sudo apt-get install -y software-properties-common # to use add-apt-repository
 install_with_repository
 install
