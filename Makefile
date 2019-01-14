@@ -16,7 +16,10 @@ deploy: ## Create symlink for dotfile and install plugin
 	@$(foreach val, $(DOTFILES), ln -snfv $(abspath $(val)) $(HOME)/$(subst dotfiles/,,$(val)))
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/deploy/fisher.sh
 
-install: init update deploy ## Run init update deploy
+after_deploy: ## Instoll apps depends on dotfiles
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/after_deploy/after_deploy.sh
+
+install: init update deploy after_deploy ## Run init update deploy after_deploy
 
 test: ## Test environment settings
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/test/test.sh
