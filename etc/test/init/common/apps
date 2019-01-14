@@ -5,3 +5,6 @@ ghq
 vim
 peco
 unzip
+jq
+httpie
+fselect
