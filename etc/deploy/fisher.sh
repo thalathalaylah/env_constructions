@@ -7,3 +7,7 @@ if [ ! -e ~/.config/fish/functions/fisher.fish ]; then
 fi
 fish -c "fisher"
 cat ~/.config/fish/fishfile
+git checkout -f origin/master
+cat ~/.config/fish/fishfile
+fish -c "fisher"
+cat ~/.config/fish/fishfile
