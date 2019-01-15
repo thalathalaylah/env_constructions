@@ -7,7 +7,7 @@ list: ## Show dot files in this repository
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
 init: ## Setup environment settings
-	@DOTPATH=$(DOTPATH) sudo bash $(DOTPATH)/etc/init/init.sh
+	@DOTPATH=$(DOTPATH) sudo -S bash $(DOTPATH)/etc/init/init.sh
 
 update: ## Fetch changes for this repository
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/update.sh
