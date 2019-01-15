@@ -46,3 +46,4 @@ mkdir ~/bin
 sh ${SCRIPTPATH}/ghq.sh
 sh ${SCRIPTPATH}/peco.sh
 sh ${SCRIPTPATH}/fselect.sh
+sh ${SCRIPTPATH}/anyenv.sh
