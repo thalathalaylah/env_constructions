@@ -1,13 +1,6 @@
 #!/bin/sh
 
 if [ ! -e ~/.config/fish/functions/fisher.fish ]; then
-  cat ~/.config/fish/fishfile
-  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
-  cat ~/.config/fish/fishfile
+  curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fi
 fish -c "fisher"
-cat ~/.config/fish/fishfile
-git checkout -f origin/master
-cat ~/.config/fish/fishfile
-fish -c "fisher"
-cat ~/.config/fish/fishfile
