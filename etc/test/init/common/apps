@@ -9,3 +9,9 @@ jq
 http
 fselect
 anyenv
+rbenv
+ruby
+pyenv
+python
+nodenv
+node
