@@ -23,6 +23,7 @@ after_deploy: ## Instoll apps depends on dotfiles
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/after_deploy/after_deploy.sh
 
 install: init user_init update deploy after_deploy ## Run init update deploy after_deploy
+	@echo 'Set default shell by "chsh -s $$(which fish)"'
 
 test: ## Test environment settings
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/test/test.sh
