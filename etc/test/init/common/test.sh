@@ -1,7 +1,10 @@
 #!/bin/sh
 
+. ${DOTPATH}/etc/library/exists.sh
+. ${DOTPATH}/etc/library/color.sh
+
+
 SCRIPTPATH=$(dirname $0)
-. ${SCRIPTPATH}/../../../library/lib.sh
 
 if [ -e fails ]; then
   echo 'Exists "fails" file. this script create same name file when test failed.'
