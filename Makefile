@@ -13,7 +13,7 @@ check_root_privilege: ## Check root privilege
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/check_root_privilege.sh
 
 init: ## Setup environment settings
-	@DOTPATH=$(DOTPATH) sudo -S bash $(DOTPATH)/etc/init/init.sh
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init/init.sh
 
 user_init: ## Setup apps by user privilege
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/user_init/user_init.sh

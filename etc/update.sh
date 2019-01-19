@@ -38,8 +38,13 @@ install_git() {
     brew install git
   elif [ ${OS} == 'linux' ]; then
     echo 'Install git'
-    sudo apt-get update
-    sudo apt-get install -y git
+    if [ -z "$ROOT_PASSWORD" ]; then
+      sudo apt-get update
+      sudo apt-get install -y git
+    else
+      echo $ROOT_PASSWORD | sudo -S apt-get update
+      echo $ROOT_PASSWORD | sudo -S apt-get install -y git
+    fi
   fi
 }
 

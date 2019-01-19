@@ -32,18 +32,15 @@ os_detect() {
     esac
 }
 
-if [ ${EUID:-${UID}} != 0 ]; then
-  output_red
-  echo 'This Init script requires root privilege. Please use sudo command.'
-  output_white
-  exit 1
-fi
-
 INITPATH=$(dirname $0)
 OS=`os_detect`
 
 if [ ${OS} == 'osx' ]; then
   sh ${INITPATH}/mac/init.sh
 elif [ ${OS} == 'linux' ]; then
-  sh ${INITPATH}/ubuntu/init.sh
+  if [ -z "$ROOT_PASSWORD" ]; then
+    sudo sh ${INITPATH}/ubuntu/init.sh
+  else
+    echo $ROOT_PASSWORD | sudo -S sh ${INITPATH}/ubuntu/init.sh
+  fi
 fi
