@@ -6,6 +6,10 @@ DOTFILES := $(wildcard dotfiles/.??*)
 list: ## Show dot files in this repository
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
+require_root_privilege: ## Exec sudo command for require root privilege commands
+	@echo 'Require root privilege'
+	@sudo -S echo 'Root privilege accepted'
+
 init: ## Setup environment settings
 	@DOTPATH=$(DOTPATH) sudo -S bash $(DOTPATH)/etc/init/init.sh
 
@@ -22,7 +26,7 @@ deploy: ## Create symlink for dotfile and install plugin
 after_deploy: ## Instoll apps depends on dotfiles
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/after_deploy/after_deploy.sh
 
-install: update init user_init deploy after_deploy ## Run initial setup commands
+install: require_root_privilege update init user_init deploy after_deploy ## Run initial setup commands
 	@echo 'Set default shell by "chsh -s $$(which fish)"'
 
 test: ## Test environment settings
