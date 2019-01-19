@@ -9,6 +9,9 @@ list: ## Show dot files in this repository
 require_root_privilege: ## Exec sudo command for require root privilege commands
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/require_root_privilege.sh
 
+check_root_privilege: ## Check root privilege
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/check_root_privilege.sh
+
 init: ## Setup environment settings
 	@DOTPATH=$(DOTPATH) sudo -S bash $(DOTPATH)/etc/init/init.sh
 
@@ -25,7 +28,7 @@ deploy: ## Create symlink for dotfile and install plugin
 after_deploy: ## Instoll apps depends on dotfiles
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/after_deploy/after_deploy.sh
 
-install: require_root_privilege update init user_init deploy after_deploy ## Run initial setup commands
+install: require_root_privilege check_root_privilege update init user_init deploy after_deploy ## Run initial setup commands (Optional: you can specify root password by environment variable ROOT_PASSWORD)
 	@echo 'Set default shell by "chsh -s $$(which fish)"'
 
 test: ## Test environment settings
