@@ -7,8 +7,7 @@ list: ## Show dot files in this repository
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
 require_root_privilege: ## Exec sudo command for require root privilege commands
-	@echo 'Require root privilege'
-	@sudo -S echo 'Root privilege accepted'
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/require_root_privilege.sh
 
 init: ## Setup environment settings
 	@DOTPATH=$(DOTPATH) sudo -S bash $(DOTPATH)/etc/init/init.sh
