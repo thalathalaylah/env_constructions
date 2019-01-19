@@ -22,7 +22,7 @@ deploy: ## Create symlink for dotfile and install plugin
 after_deploy: ## Instoll apps depends on dotfiles
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/after_deploy/after_deploy.sh
 
-install: init user_init update deploy after_deploy ## Run init update deploy after_deploy
+install: update init user_init deploy after_deploy ## Run initial setup commands
 	@echo 'Set default shell by "chsh -s $$(which fish)"'
 
 test: ## Test environment settings
