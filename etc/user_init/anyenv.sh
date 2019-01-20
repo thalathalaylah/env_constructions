@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git clone https://github.com/riywo/anyenv ~/.anyenv
+git clone https://github.com/anyenv/anyenv ~/.anyenv

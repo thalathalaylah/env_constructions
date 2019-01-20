@@ -1,6 +1,7 @@
 #!/bin/sh
 
-SCRIPTPATH=$(dirname $0)
+# init
+fish -c "echo y | anyenv install --init"
 
 # install ruby
 fish -c "anyenv install -s rbenv"
