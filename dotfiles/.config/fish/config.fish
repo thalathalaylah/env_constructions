@@ -1,4 +1,4 @@
-set PATH $HOME/bin $HOME/.anyenv/bin $PATH
+set -gx PATH $HOME/bin $HOME/.anyenv/bin $PATH
 anyenv init - fish | source
 
 function fish_user_key_bindings
