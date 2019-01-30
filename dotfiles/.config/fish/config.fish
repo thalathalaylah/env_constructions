@@ -1,5 +1,5 @@
 set PATH $HOME/bin $HOME/.anyenv/bin $PATH
-anyenv init - fish | source
+status --is-interactive; and source (anyenv init -|psub)
 
 function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
